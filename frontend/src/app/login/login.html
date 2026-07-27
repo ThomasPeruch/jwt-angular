@@ -1,6 +1,6 @@
-<form (ngSubmit)="login()">
-    <input type="text" [(ngModel)]="username" name="username" placeholder="Usuário">
-    <input type="password" [(ngModel)]="password" name="password" placeholder="Senha">
+<form #form="ngForm" (ngSubmit)="login()">
+    <input type="text" [(ngModel)]="username" name="username" placeholder="Usuário" required>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Senha" required>
     <button type="submit">Entrar</button>
 </form>
-<p *ngIf="message">{{message}}</p>
+<p *ngIf="message()">{{message()}}</p>
