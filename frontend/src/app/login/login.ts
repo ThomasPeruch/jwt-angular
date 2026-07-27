@@ -1,4 +1,4 @@
-import { NgZone, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { AuthService } from '../auth';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
