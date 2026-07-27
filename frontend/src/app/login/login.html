@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en">
+<form (ngSubmit)="login()">
+    <input type="text" [(ngModel)]="username" name="username" placeholder="Usuário">
+    <input type="password" [(ngModel)]="password" name="password" placeholder="Senha">
+    <button type="submit">Entrar</button>
+</form>
+<p *ngIf="message">{{message}}</p>
+</html>
