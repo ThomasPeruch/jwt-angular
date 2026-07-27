@@ -1,2 +1,5 @@
-<h3 *ngIf="isAuthenticated">Essa é uma pagina restrita</h3>
-<h3> Você não possui autenticação </h3>
+@if (isAuthenticated()) {
+    <h3>Parabéns, você está autenticado</h3>
+} @else {
+    <h3> Você não possui autenticação </h3>
+}

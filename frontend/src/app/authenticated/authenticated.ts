@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { AuthService } from '../auth';
 import { CommonModule } from '@angular/common';
-import { HttpStatusCode } from '@angular/common/http';
 
 @Component({
   selector: 'app-authenticated',
@@ -12,7 +11,7 @@ import { HttpStatusCode } from '@angular/common/http';
 
 export class Authenticated {
 
-  isAuthenticated = signal(false);
+  isAuthenticated = signal<boolean>(false);
 
   constructor(private authService: AuthService) {}
 
@@ -22,7 +21,7 @@ export class Authenticated {
     if(token){
       this.authService.authenticate(token).subscribe({
         next: (response) => {
-          console.log(response.status)
+          console.log('http status: ',response.status);
           this.isAuthenticated.set(response.status === 200) 
         },
         error: () => {
